@@ -3,6 +3,34 @@
 
 # app-plotAFQ
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Renders PNG images of a whole-brain .tck tractogram from four views (axial, coronal, left and right sagittal) with DIPY/VTK for visual quality assurance.**
+
+Loads the tractogram with nibabel, renders all streamlines with the DIPY/VTK viewer in a virtual display and saves one image per fixed camera view, listed in images.json. Use it as a quick visual QA of tractography. Camera positions are fixed, so images assume a roughly standard head position.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/track/tck` |
+| 📤 **Outputs** | `generic/images` |
+| 🐳 **Container** | `brainlife/pythonvtk:1.2` |
+| ⚙️ **Resources** | 1 CPUs · 0.75 h walltime |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.310](https://doi.org/10.25663/brainlife.app.310) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `track` | `neuro/track/tck` | yes | The path to the tractogram (tck) |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `images` | `generic/images` | The directory containing multiple images of the whole brain tractogram |
+
+<!-- brainlife-app:end -->
+
 This App plots the fibers outputted from app-tractclassification.
 
 ![screenshot](screenshot.png)
